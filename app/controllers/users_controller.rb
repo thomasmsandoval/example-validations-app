@@ -21,10 +21,10 @@ class UsersController < ApplicationController
       email: params["email"],
       phone_number: params["phone_number"],
     )
-    if @product.valid?
+    if @user.valid?
       render :show
     else
-      render json: { errors: @product.errors.full_messages }, status: 422
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 
@@ -36,10 +36,10 @@ class UsersController < ApplicationController
       email: params["email"] || @user.email,
       phone_number: params["phone_number"] || @user.phone_number,
     )
-    if @product.valid?
+    if @user.valid?
       render :show
     else
-      render json: { errors: @product.errors.full_messages }, status: 422
+      render json: { errors: @user.errors.full_messages }, status: 422
     end
   end
 
